@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "My Extension to copy links",
+    "version": "1.0",
+    "description": "copy youtube link",
+    "permissions": [
+		"clipboardWrite",   "tabs",
+        "bookmarks"
+	],
+    "icons": {
+      "16": "1.png",
+      "48": "1.png",
+      "128": "1.png"
+    },
+    "browser_action": {
+      "default_icon": "1.png",
+      "default_popup": "index.html"
+    } ,"content_scripts": [
+        {
+        "matches" :["https://youtube.com/*"],
+          "js": ["javas.js"]
+        }
+      ]
+      
+  }
+  
