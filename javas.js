@@ -25,8 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     textbox3.addEventListener('click', function() {
         let timeString = document.getElementById("textbox3").value;
-        let [minutes, seconds] = timeString.split(':').map(Number);
-        let totalSeconds = minutes * 60 + seconds;
+        let arr = timeString.split(':').map(Number);
+        let totalSeconds ;
+        if(arr.length == 2){
+          totalSeconds = arr[0] * 60 + arr[1];
+        }else{
+          totalSeconds = arr[0]*3600 +arr[1] * 60 + arr[2];
+        }
+        
         document.getElementById("textbox3").value = totalSeconds;
         navigator.clipboard.writeText(totalSeconds)
         .then(function() {
